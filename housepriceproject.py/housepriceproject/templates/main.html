@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand" href="#"><h1>一人暮らし賃貸妥当価格検索サイト</h1></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarsExample01">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"><h4>このサイトについて</h4>　正確なモデルの構築のため、目黒線の急行停車駅かつ 1R 1K 1DK 1LDKを選択しました。情報元はSUUMOサイトによる</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">東急目黒線沿い駅検索</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarsExample03">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">駅を選ぶ</a>
+        <div class="dropdown-menu" aria-labelledby="dropdown03">
+          <a class="dropdown-item" href="#">目黒駅</a>
+          <a class="dropdown-item" href="#">武蔵小山駅</a>
+          <a class="dropdown-item" href="#">大岡山駅</a>
+          <a class="dropdown-item" href="#">田園調布駅</a>
+          <a class="dropdown-item" href="#">多摩川駅</a>
+          <a class="dropdown-item" href="#">武蔵小杉駅</a>
+          <a class="dropdown-item" href="#">日吉駅</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<form class="form-check form-check-inline" method="POST" action=''>{% csrf_token %}
+    <div class="form-check form-check-inline" method="POST" action=''>{% csrf_token %}
+    <input class="form-check-input" type="radio" name="inlineRadioOptions1" id="inlineRadio1" value="option1">
+    <label class="form-check-label" for="inlineRadio1">目黒駅</label>
+    </div>
+    <div class="form-check form-check-inline" method="POST" action=''>{% csrf_token %}
+    <input class="form-check-input" type="radio" name="inlineRadioOptions2" id="inlineRadio2" value="option2">
+    <label class="form-check-label" for="inlineRadio2">武蔵小山駅</label>
+    </div>
+    <div class="form-check form-check-inline" method="POST" action=''>{% csrf_token %}
+    <input class="form-check-input" type="radio" name="inlineRadioOptions3" id="inlineRadio3" value="option3">
+    <label class="form-check-label" for="inlineRadio3">田園調布駅</label>
+    </div>
+    <div class="form-check form-check-inline" method="POST" action=''>{% csrf_token %}
+    <input class="form-check-input" type="radio" name="inlineRadioOptions4" id="inlineRadio4" value="option4">
+    <label class="form-check-label" for="inlineRadio4">多摩川駅</label>
+    </div>
+    <div class="form-check form-check-inline" method="POST" action=''>{% csrf_token %}
+    <input class="form-check-input" type="radio" name="inlineRadioOptions5" id="inlineRadio5" value="option5">
+    <label class="form-check-label" for="inlineRadio5">武蔵小杉駅</label>
+    </div>
+    <div class="form-check form-check-inline" method="POST" action=''>{% csrf_token %}
+    <input class="form-check-input" type="radio" name="inlineRadioOptions6" id="inlineRadio6" value="option6">
+    <label class="form-check-label" for="inlineRadio6">日吉駅</label>
+    </div>
+<button  class="btn btn-secondary btn-lg btn-block" type="submit">送信</button>
+</form>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample08" aria-controls="navbarsExample08" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample08">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Created by Tokyo Team E<span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+  </div>
+</nav>
+{% endblock content %}
