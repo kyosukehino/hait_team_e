@@ -21,23 +21,6 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-
-  <div class="collapse navbar-collapse" id="navbarsExample03">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">駅を選ぶ</a>
-        <div class="dropdown-menu" aria-labelledby="dropdown03">
-          <a class="dropdown-item" href="#">目黒駅</a>
-          <a class="dropdown-item" href="#">武蔵小山駅</a>
-          <a class="dropdown-item" href="#">大岡山駅</a>
-          <a class="dropdown-item" href="#">田園調布駅</a>
-          <a class="dropdown-item" href="#">多摩川駅</a>
-          <a class="dropdown-item" href="#">武蔵小杉駅</a>
-          <a class="dropdown-item" href="#">日吉駅</a>
-        </div>
-      </li>
-    </ul>
-  </div>
 </nav>
 
 <form class="form-check form-check-inline" method="POST" action=''>{% csrf_token %}
@@ -65,7 +48,18 @@
     <input class="form-check-input" type="radio" name="inlineRadioOptions6" id="inlineRadio6" value="option6">
     <label class="form-check-label" for="inlineRadio6">日吉駅</label>
     </div>
-<button  class="btn btn-secondary btn-lg btn-block" type="submit">送信</button>
+  
+    <div class="form-group">
+      <label for="exampleInputEmail1">徒歩何分</label>
+      <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      <small id="emailHelp" class="form-text text-muted"></small>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">築年数</label>
+      <input type="number" class="form-control" id="exampleInputPassword1">
+    </div>
+  
+  <button  class="btn btn-secondary btn-lg btn-block" type="submit">送信</button>
 </form>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
