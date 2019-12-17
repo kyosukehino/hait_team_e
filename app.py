@@ -43,6 +43,8 @@ def predicts():
 
             x = np.array([Age, Area, Time])
             pred = predict(x)
+            #irisNameはモデルから取ってきた値を返すところ
+            irisName = getName(pred)
 
             return render_template('result.html', irisName=irisName)
     elif request.method == 'GET':
