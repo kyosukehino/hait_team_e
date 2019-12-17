@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block body %}
+  <form method="get" action="">
+     {{ form.station.label }}：
+    {% for STATION_CHOICES in station %}
+      {{ station }}
+    <hr>
+    
+    {{ form.time.label }}：
+    {{ form.time }}
+    <hr>
+
+    {{ form.age.label }}：
+    {{ form.age }}
+    <hr>
+
+    {{ form.send_message.label }}：
+    {{ form.send_message }}
+    <hr>
+
+    {% endfor %}
+    <hr>
+
+   
+
+  </form>
+{% endblock %}
