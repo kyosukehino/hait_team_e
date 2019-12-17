@@ -1,0 +1,8 @@
+<!DOCTYPE html>
+<title>House Price Predict App</title>
+{% if pred %}
+  <h1>予測家賃(賃料+管理費)は {{ pred }} です</h1>
+  <a href="./">トップへ戻る</a>
+{% else %}
+  <a href="./">トップへ戻る</a>
+{% endif %}
