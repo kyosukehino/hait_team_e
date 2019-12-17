@@ -15,15 +15,15 @@ app = Flask(__name__)
 
 # Flaskとwtformsを使い、index.html側で表示させるフォームを構築する
 class HousePriceForm(Form):
-    Ageform = IntergerField("Age(年)(築年数)",
+    Age = IntergerField("Age(年)(築年数)",
                      [validators.InputRequired("この項目は入力必須です"),
                      validators.NumberRange(min=0, max=150)])
 
-    Areaform  = FloatField("Area(㎡)(専有面積)",
+    Area  = FloatField("Area(㎡)(専有面積)",
                      [validators.InputRequired("この項目は入力必須です"),
                      validators.NumberRange(min=0, max=100)])
 
-    Timeform = IntergerField("Time(分)(最寄駅までの徒歩の所要時間)",
+    Time = IntergerField("Time(分)(最寄駅までの徒歩の所要時間)",
                      [validators.InputRequired("この項目は入力必須です"),
                      validators.NumberRange(min=0, max=60)])
 
@@ -43,10 +43,8 @@ def predicts():
 
             x = np.array([Age, Area, Time])
             pred = predict(x)
-            #irisNameはモデルから取ってきた値を返すところ
-            irisName = getName(pred)
 
-            return render_template('result.html', irisName=irisName)
+            return render_template('result.html', pred=pred)
     elif request.method == 'GET':
 
         return render_template('index.html', form=form)
