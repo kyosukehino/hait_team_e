@@ -15,15 +15,15 @@ app = Flask(__name__)
 
 # Flaskとwtformsを使い、index.html側で表示させるフォームを構築する
 class HousePriceForm(Form):
-    SepalLength = IntergerField("Age(年)(築年数)",
+    Ageform = IntergerField("Age(年)(築年数)",
                      [validators.InputRequired("この項目は入力必須です"),
                      validators.NumberRange(min=0, max=150)])
 
-    SepalWidth  = FloatField("Area(㎡)(専有面積)",
+    Areaform  = FloatField("Area(㎡)(専有面積)",
                      [validators.InputRequired("この項目は入力必須です"),
                      validators.NumberRange(min=0, max=100)])
 
-    PetalLength = IntergerField("Time(分)(最寄駅までの徒歩の所要時間)",
+    Timeform = IntergerField("Time(分)(最寄駅までの徒歩の所要時間)",
                      [validators.InputRequired("この項目は入力必須です"),
                      validators.NumberRange(min=0, max=60)])
 
