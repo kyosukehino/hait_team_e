@@ -1,0 +1,21 @@
+<!-- データ入力の画面を定義するためのものです． -->
+<title>HousePrice Predict App</title>
+<style>
+    #wrapper {
+        text-align: center;
+    }
+</style>
+<div id="wrapper">
+    <form method="post">
+        {{ form.Age.label }}<br>
+        {{ form.Age }}
+        <br>
+        {{ form.Area.label }}<br>
+        {{ form.Area }}
+        <br>
+        {{ form.Time.label }}<br>
+        {{ form.Time }}
+        <br>
+        {{ form.submit }}
+    </form>
+</div>
