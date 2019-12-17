@@ -75,18 +75,30 @@ df_hiyoshi['建物高さ'] = df_hiyoshi['建物高さ'].str.replace(u'階建', u
 df_hiyoshi['建物高さ'] = pd.to_numeric(df_hiyoshi['建物高さ'])
 
 #分割前のカラムは分析に使用しないので削除しておく
-df_hiyoshi.drop(['階','敷金','礼金','階2','賃料','管理費'], axis=1, inplace=True)
+#df_hiyoshi.drop(['階','敷金','礼金','階2','賃料','管理費'], axis=1, inplace=True)
 
 #並べ替え
 df_hiyoshi = df_hiyoshi[['築年数','建物高さ','階1','専有面積','立地12','賃料+管理費']]
 
 # 学習
-model.fit(x_train, y_train)
-pred = model.predict(x_test)
+X = np.array(df_hiyoshi.loc[:, ['築年数','専有面積','立地12']])
+y = np.array(df_hiyoshi.loc[:, ['賃料+管理費']])
+
+from sklearn.model_selection import train_test_split
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=0)
+
+# ランダムフォレストによる学習
+#ランダムフォレストのクラスを読み込み
+from sklearn.ensemble import RandomForestClassifier
+#ランダムフォレストのインスタンスを生成
+rfc = RandomForestClassifier(random_state=0, n_estimators=10)
+#モデルを学習
+rfc.fit(X_train, y_train)
 
 # 学習済みモデルの保存
-joblib.dump(model, "nn.pkl", compress=True)
+joblib.dump(rfc, "ml_hiyoshi.pkl", compress=True)
 
 # 予測精度
-print("result: ", model.score(x_test, y_test))
-print(classification_report(y_test, pred))
+#print("result: ", rfc.score(X_test, y_test))
+#pred = rfc.predict(X_test)
+#print(classification_report(y_test, pred))
