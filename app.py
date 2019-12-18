@@ -28,7 +28,7 @@ class HousePriceForm(Form):
 
 # 学習モデルを読み込み予測する
 def predict(parameters, Station):
-    # モデル読み込み(日吉)
+    # モデル読み込み
     if Station == "日吉":
         model = joblib.load('./ml_hiyoshi.pkl')
         params = parameters.reshape(1,-1)
@@ -36,13 +36,26 @@ def predict(parameters, Station):
         pred = int(pred[0])
         return pred
     
-    #モデル読み込み(武蔵小杉)
+    if Station == "目黒":
+        model =  joblib.load('./ml_meguro.pkl')
+        params = parameters.reshape(1,-1)
+        pred = model.predict(params)
+        pred = int(pred[0])
+        return pred
+
+    if Station == "多摩川":
+        model = joblib.load('./ml_tamagawa.pkl')
+        params = parameters.reshape(1,-1)
+        pred = model.predict(params)
+        pred = int(pred[0])
+        return pred
+
     if Station == "武蔵小杉":
-        model2 =  joblib.load('./ml_musashikosugi.pkl')
-        params2 = parameters.reshape(1,-1)
-        pred2 = model.predict(params2)
-        pred2 = int(pred2[0])
-        return pred2
+        model = joblib.load('./ml_musashikosugi.pkl')
+        params = parameters.reshape(1,-1)
+        pred = model.predict(params)
+        pred = int(pred[0])
+        return pred
 
 @app.route('/', methods = ['GET', 'POST'])
 def predicts():
