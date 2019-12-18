@@ -9,6 +9,7 @@ def predict(parameters):
     model = joblib.load('./ml_hiyoshi.pkl')
     params = parameters.reshape(1,-1)
     pred = model.predict(params)
+    pred = int(pred[0])
     return pred
 
 app = Flask(__name__)
