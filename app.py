@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from wtforms import Form, FloatField, SubmitField, validators, ValidationError
+from wtforms import Form, IntegerField, StringField, FloatField, SubmitField, validators, ValidationError
 import numpy as np
 from sklearn.externals import joblib
 
